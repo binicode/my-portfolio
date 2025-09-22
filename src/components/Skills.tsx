@@ -7,7 +7,6 @@ export function Skills() {
       skills: [
         { name: "JavaScript (ES6+)", level: 98 },
         { name: "React", level: 96 },
-        { name: "Node.js", level: 88 },
         { name: "TypeScript", level: 90 },
         { name: "Vanilla JS", level: 95 },
       ],
@@ -17,7 +16,6 @@ export function Skills() {
       skills: [
         { name: "HTML5", level: 96 },
         { name: "CSS3", level: 94 },
-        { name: "Next.js", level: 90 },
         { name: "Tailwind CSS", level: 95 },
         { name: "React Hooks", level: 94 },
       ],
@@ -28,8 +26,8 @@ export function Skills() {
         { name: "Git & GitHub", level: 95 },
         { name: "Webpack/Vite", level: 85 },
         { name: "NPM/Yarn", level: 92 },
-        { name: "Chrome DevTools", level: 94 },
-        { name: "VS Code", level: 95 },
+        { name: "VS Code", level: 95 },        
+        { name: "Figma", level: 85 },
       ],
     },
   ];

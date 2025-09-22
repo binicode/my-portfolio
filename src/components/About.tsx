@@ -7,7 +7,7 @@ export function About() {
       icon: <Code className="w-8 h-8 text-yellow-400" />,
       title: "Modern JavaScript",
       description:
-        "Expert in ES6+, async/await, modules, and modern JavaScript patterns for building scalable applications.",
+        "Expert in ES6+ (Arrow functions, async/await, and modules) for clean, efficient code.",
     },
     {
       icon: <Palette className="w-8 h-8 text-yellow-400" />,
@@ -19,7 +19,7 @@ export function About() {
       icon: <Zap className="w-8 h-8 text-yellow-400" />,
       title: "Performance",
       description:
-        "Optimizing JavaScript code for speed, efficiency, and smooth user experiences across all devices.",
+        "Fast, responsive, and efficient—my frontend work is built for performance. From optimized components to smooth interactions, speed is always part of the design.",
     },
   ];
 
@@ -37,10 +37,10 @@ export function About() {
             About <span className="text-yellow-400">Me</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I'm a passionate JavaScript developer with 5+ years of experience
-            creating stunning user interfaces and interactive web experiences
-            using modern JavaScript, React, and cutting-edge web technologies.
-          </p>
+            I began my professional journey in civil engineering, 
+            where I developed a strong foundation in structure, 
+            precision, and problem-solving. While I enjoyed the discipline, 
+            I found myself increasingly drawn to the creative and dynamic world of technology.          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -51,28 +51,27 @@ export function About() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-300 mb-6">
-              My journey in JavaScript development started during college, where
-              I discovered my passion for creating dynamic, interactive user
-              interfaces. Since then, I've worked with startups and established
-              companies, leveraging the power of modern JavaScript to transform
-              designs into pixel-perfect, responsive web experiences.
+              Today, I’m a frontend developer specializing in 
+              React and Tailwind CSS. I build modular, responsive interfaces 
+              that balance clean architecture with visual clarity. 
+              My work blends logic and design to create seamless user experiences across devices.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              I specialize in vanilla JavaScript, ES6+, React, and modern
-              JavaScript frameworks, always staying up-to-date with the latest
-              ECMAScript features and performance optimization techniques. When
-              I'm not coding, you can find me exploring new JavaScript
-              libraries, contributing to open source projects, or experimenting
-              with cutting-edge JavaScript features.
+              Whether I’m collaborating on a freelance project, contributing to a team, 
+              or exploring new tools, I bring curiosity, adaptability, and a builder’s mindset 
+              to every challenge. I’m currently open to internships, freelance opportunities, 
+              and junior developer roles.
+
             </p>
             <div className="flex flex-wrap gap-3">
               {[
                 "JavaScript",
                 "ES6+",
                 "React",
-                "Node.js",
                 "TypeScript",
+                "Tailwind CSS",
                 "CSS3",
+                "HTML5",
               ].map((tech) => (
                 <span
                   key={tech}

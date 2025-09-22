@@ -168,7 +168,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <p className="text-yellow-400 text-lg font-medium mb-2">
-                Hello, I'm
+                Hi, I'm
               </p>
             </motion.div>
 
@@ -221,7 +221,7 @@ export function Hero() {
                 &lt;/&gt;
               </motion.div>
               <h2 className="text-2xl lg:text-3xl text-gray-200">
-                JavaScript Frontend Developer
+                React Frontend Developer
               </h2>
               <motion.div
                 animate={{ scale: [1, 1.3, 1] }}
@@ -239,16 +239,16 @@ export function Hero() {
               className="space-y-4"
             >
               <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Crafting exceptional user interfaces with{" "}
+                Frontend finesse with{" "}
                 <span className="text-yellow-400 font-semibold">
-                  modern JavaScript
+                  React
                 </span>{" "}
-                and <span className="text-yellow-400 font-semibold">React</span>
+                and <span className="text-yellow-400 font-semibold">Tailwind CSS</span>
                 .
               </p>
               <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-                Passionate about clean code, responsive design, and creating
-                seamless experiences that delight users.
+                Turning ideas into intuitive interfaces. Every component is crafted for clarity, 
+                responsiveness, and visual impact.
               </p>
             </motion.div>
 
@@ -269,7 +269,7 @@ export function Hero() {
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Code2 className="w-5 h-5" />
-                    View My Work
+                    Explore My Projects
                   </span>
                   <motion.div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
@@ -282,11 +282,11 @@ export function Hero() {
                 <Button
                   onClick={() => scrollToSection("#contact")}
                   variant="outline"
-                  className="border-2 border-yellow-400/40 text-yellow-300 hover:bg-yellow-400/10 hover:border-yellow-300 px-8 py-6 text-lg rounded-xl backdrop-blur-sm relative overflow-hidden group"
+                  className="border-2 border-yellow-400/40 text-amber-400 hover:bg-yellow-400/10 hover:border-yellow-300 px-8 py-6 text-lg rounded-xl backdrop-blur-sm relative overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Mail className="w-5 h-5" />
-                    Get In Touch
+                    Hire Me
                   </span>
                 </Button>
               </motion.div>
@@ -328,7 +328,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end"
+            className="space-y-4 lg:pr-8 relative flex justify-center lg:justify-end"
           >
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-yellow-600/20 rounded-full blur-3xl scale-110" />
