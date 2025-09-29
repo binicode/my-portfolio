@@ -5,13 +5,15 @@ import profileImage from "../../assets/profile-picture.jpg";
 export function ProfileImage() {
   const floatingElements = [
     {
-      element: <Braces className="w-5 h-5 text-yellow-400" />,
+      element: (
+        <Braces className="w-5 h-5 text-yellow-400" aria-hidden="true" />
+      ),
       position: { top: "10%", right: "10%" },
       delay: 0,
     },
     {
       element: (
-        <span className="text-yellow-400 font-mono text-lg">
+        <span className="text-yellow-400 font-mono text-lg" aria-hidden="true">
           &lt;/&gt;
         </span>
       ),
@@ -19,13 +21,17 @@ export function ProfileImage() {
       delay: 0.5,
     },
     {
-      element: <Sparkles className="w-5 h-5 text-yellow-400" />,
+      element: (
+        <Sparkles className="w-5 h-5 text-yellow-400" aria-hidden="true" />
+      ),
       position: { bottom: "20%", right: "5%" },
       delay: 1,
     },
     {
       element: (
-        <span className="text-yellow-400 font-mono text-sm">{}</span>
+        <span className="text-yellow-400 font-mono text-sm" aria-hidden="true">
+          {/* Decorative */}
+        </span>
       ),
       position: { bottom: "30%", left: "10%" },
       delay: 1.5,
@@ -37,8 +43,12 @@ export function ProfileImage() {
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
       className="space-y-4 lg:pr-8 relative flex justify-center lg:justify-end"
+      aria-hidden="true"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-yellow-600/20 rounded-full blur-3xl scale-110" />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-yellow-600/20 rounded-full blur-3xl scale-110"
+        aria-hidden="true"
+      />
       <motion.div
         className="absolute inset-0 border-2 border-yellow-400/20 rounded-full"
         animate={{ rotate: 360 }}
@@ -49,6 +59,7 @@ export function ProfileImage() {
           left: "-10%",
           top: "-10%",
         }}
+        aria-hidden="true"
       />
       <motion.div
         className="absolute inset-0 border border-yellow-400/10 rounded-full"
@@ -60,11 +71,12 @@ export function ProfileImage() {
           left: "-20%",
           top: "-20%",
         }}
+        aria-hidden="true"
       />
       {floatingElements.map(({ element, position, delay }, index) => (
         <motion.div
           key={index}
-          className="absolute p-3 bg-yellow-400/10 border border-yellow-400/20 rounded-full backdrop-blur-sm flex items-center justify-center"
+          className="absolute p-3 bg-yellow-400/10 border border-yellow-400/20 rounded-full backdrop-blur-sm flex items-center justify-center pointer-events-none"
           style={position}
           initial={{ opacity: 0, scale: 0 }}
           animate={{
@@ -77,6 +89,7 @@ export function ProfileImage() {
             scale: { delay: delay + 1 },
             y: { duration: 3, repeat: Infinity, delay: delay },
           }}
+          aria-hidden="true"
         >
           {element}
         </motion.div>
@@ -87,14 +100,18 @@ export function ProfileImage() {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 via-yellow-500/20 to-yellow-600/30 rounded-full blur-xl opacity-60" />
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 via-yellow-500/20 to-yellow-600/30 rounded-full blur-xl opacity-60"
+            aria-hidden="true"
+          />
           <motion.img
             src={profileImage}
-            alt="Biniyam"
+            alt="Biniyam's profile portrait"
             className="w-full h-full rounded-full object-cover border-4 border-yellow-400/40 shadow-2xl shadow-yellow-400/20 relative z-10"
             initial={{ borderRadius: "20%" }}
             animate={{ borderRadius: "50%" }}
             transition={{ duration: 1, delay: 0.8 }}
+            loading="lazy"
           />
           <motion.div
             className="absolute inset-0 rounded-full border-2 border-yellow-400/60"
@@ -103,6 +120,7 @@ export function ProfileImage() {
               opacity: [0.6, 1, 0.6],
             }}
             transition={{ duration: 4, repeat: Infinity }}
+            aria-hidden="true"
           />
         </motion.div>
       </div>

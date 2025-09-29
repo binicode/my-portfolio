@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
 
+/**
+ * MainHeading
+ * - Uses semantic <h1> for SEO and accessibility
+ * - Adds id for aria-labelledby reference
+ */
 export function MainHeading() {
   return (
     <motion.div
-      id="main-heading"
-      role="heading"
-      aria-level={1}
+      id="hero-main-heading"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.7 }}
       className="space-y-4"
+      role="heading"
+      aria-level={1}
     >
       <h1 className="text-5xl lg:text-7xl xl:text-8xl leading-tight">
         <motion.span
@@ -27,6 +32,7 @@ export function MainHeading() {
         animate={{ width: "100%" }}
         transition={{ duration: 1.2, delay: 1 }}
         className="h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-transparent"
+        aria-hidden="true"
       />
     </motion.div>
   );

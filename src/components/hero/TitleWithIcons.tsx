@@ -8,6 +8,7 @@ export function TitleWithIcons() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.9 }}
       className="flex items-center gap-4 flex-wrap"
+      aria-label="Role and icons"
     >
       <motion.div
         animate={{
@@ -20,6 +21,7 @@ export function TitleWithIcons() {
           ease: "easeInOut",
         }}
         className="text-yellow-400 text-2xl font-mono"
+        aria-hidden="true"
       >
         &lt;/&gt;
       </motion.div>
@@ -29,8 +31,9 @@ export function TitleWithIcons() {
       <motion.div
         animate={{ scale: [1, 1.3, 1] }}
         transition={{ duration: 2.5, repeat: Infinity }}
+        aria-hidden="true"
       >
-        <Zap className="w-6 h-6 text-yellow-400" />
+        <Zap className="w-6 h-6 text-yellow-400" aria-hidden="true" />
       </motion.div>
     </motion.div>
   );

@@ -3,9 +3,13 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function SocialLinks() {
   const links = [
-    { Icon: Github, href: "#", label: "GitHub" },
-    { Icon: Linkedin, href: "#", label: "LinkedIn" },
-    { Icon: Mail, href: "#", label: "Email" },
+    { Icon: Github, href: "https://github.com/binicode", label: "GitHub" },
+    {
+      Icon: Linkedin,
+      href: "https://www.linkedin.com/in/biniyam-abera-engineer",
+      label: "LinkedIn",
+    },
+    { Icon: Mail, href: "mailto:myrita099@email.com", label: "Email" },
   ];
   return (
     <motion.div
@@ -20,6 +24,9 @@ export function SocialLinks() {
           <motion.a
             key={label}
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
             className="p-2 rounded-lg border border-yellow-400/20 text-gray-400 hover:text-yellow-300 hover:border-yellow-400/40 transition-all duration-300 backdrop-blur-sm group"
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -27,7 +34,7 @@ export function SocialLinks() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.7 + index * 0.1 }}
           >
-            <Icon size={20} />
+            <Icon size={20} aria-hidden="true" />
           </motion.a>
         ))}
       </div>

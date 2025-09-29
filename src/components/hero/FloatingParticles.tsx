@@ -8,7 +8,7 @@ export function FloatingParticles({ particles }: { particles: Particle[] }) {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute w-1 h-1 bg-yellow-400/60 rounded-full"
+          className="absolute w-1 h-1 bg-yellow-400/60 rounded-full pointer-events-none"
           initial={{ opacity: 0, scale: 0 }}
           animate={{
             opacity: [0, 1, 0],
@@ -25,6 +25,7 @@ export function FloatingParticles({ particles }: { particles: Particle[] }) {
             left: `${particle.x}%`,
             top: `${particle.y}%`,
           }}
+          aria-hidden="true"
         />
       ))}
     </>

@@ -1,6 +1,23 @@
 import { motion } from "framer-motion";
+import React, {useMemo} from "react";
 
-export function FloatingCodeSnippets({ codeSnippets }: { codeSnippets: string[] }) {
+interface FloatingCodeSnippetsProps {
+  codeSnippets: string[];
+}
+
+
+export function FloatingCodeSnippets({ codeSnippets }: FloatingCodeSnippetsProps) {
+  // Memoize random positions so they don't change on every render
+  const positions = useMemo(
+    () =>
+      codeSnippets.map((_, index) => ({
+        x: Math.random() * 40 - 20,
+        y: Math.random() * 80 - 40,
+        left: 10 + index * 15,
+      })),
+    [codeSnippets.length]
+  );
+
   return (
     <>
       {codeSnippets.map((snippet, index) => (
@@ -11,7 +28,7 @@ export function FloatingCodeSnippets({ codeSnippets }: { codeSnippets: string[] 
           animate={{
             opacity: [0, 0.3, 0],
             y: [-20, -120, -200],
-            x: [0, Math.random() * 40 - 20, Math.random() * 80 - 40],
+            x: [0, positions[index].x, positions[index].y],
           }}
           transition={{
             duration: 8,
@@ -20,9 +37,10 @@ export function FloatingCodeSnippets({ codeSnippets }: { codeSnippets: string[] 
             ease: "linear",
           }}
           style={{
-            left: `${10 + index * 15}%`,
+            left: `${positions[index].left}%`,
             top: "80%",
           }}
+          aria-hidden="true"
         >
           {snippet}
         </motion.div>

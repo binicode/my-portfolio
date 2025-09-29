@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-export function ScrollIndicator({ scrollToSection }: { scrollToSection: (href: string) => void }) {
+export function ScrollIndicator({
+  scrollToSection,
+}: {
+  scrollToSection: (href: string) => void;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 2 }}
       className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+      aria-hidden="false"
     >
       <motion.button
         onClick={() => scrollToSection("#about")}
@@ -15,13 +20,15 @@ export function ScrollIndicator({ scrollToSection }: { scrollToSection: (href: s
         whileHover={{ scale: 1.1 }}
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
+        aria-label="Scroll to about section"
       >
         <span className="text-sm text-gray-400">Scroll to explore</span>
-        <ChevronDown size={24} />
+        <ChevronDown size={24} aria-hidden="true" />
         <motion.div
           className="absolute -inset-3 border border-yellow-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
+          aria-hidden="true"
         />
       </motion.button>
     </motion.div>

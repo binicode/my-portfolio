@@ -12,7 +12,7 @@ interface HeroLeftContentProps {
 
 export function HeroLeftContent({ scrollToSection }: HeroLeftContentProps) {
   return (
-    <div className="space-y-8 lg:pr-8">
+    <section className="space-y-8 lg:pr-8" aria-labelledby="hero-main-heading">
       <StatusIndicator />
       <Greeting />
       <MainHeading />
@@ -20,6 +20,6 @@ export function HeroLeftContent({ scrollToSection }: HeroLeftContentProps) {
       <Description />
       <HeroButtons scrollToSection={scrollToSection} />
       <SocialLinks />
-    </div>
+    </section>
   );
 }
