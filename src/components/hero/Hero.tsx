@@ -80,7 +80,7 @@ export function Hero() {
 
       {/* Main content container */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-20">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-20 pb-24">
           <HeroLeftContent scrollToSection={scrollToSection} />
           <HeroRightContent />
         </div>

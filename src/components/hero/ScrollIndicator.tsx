@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-export function ScrollIndicator({
-  scrollToSection,
-}: {
-  scrollToSection: (href: string) => void;
-}) {
+export function ScrollIndicator({ scrollToSection }: { scrollToSection: (href: string) => void }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

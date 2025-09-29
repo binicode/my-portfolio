@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Braces, Sparkles } from "lucide-react";
-import profileImage from "../../assets/profile-picture.jpg";
+import profileImageSmall from "../../assets/profile-picture-small.webp";
+import profileImageLarge from "../../assets/profile-picture.webp";
 
 export function ProfileImage() {
   const floatingElements = [
@@ -96,7 +97,7 @@ export function ProfileImage() {
       ))}
       <div className="relative">
         <motion.div
-          className="w-80 h-80 lg:w-96 lg:h-96 relative"
+          className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
@@ -105,7 +106,9 @@ export function ProfileImage() {
             aria-hidden="true"
           />
           <motion.img
-            src={profileImage}
+            src={profileImageLarge}
+            srcSet={`${profileImageSmall} 192w, ${profileImageLarge} 400w`}
+            sizes="(max-width: 640px) 192px, 400px"
             alt="Biniyam's profile portrait"
             className="w-full h-full rounded-full object-cover border-4 border-yellow-400/40 shadow-2xl shadow-yellow-400/20 relative z-10"
             initial={{ borderRadius: "20%" }}

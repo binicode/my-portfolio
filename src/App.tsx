@@ -7,11 +7,11 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Header />
-      <main>
+      <main >
         <Hero />
         <About />
         <Skills />

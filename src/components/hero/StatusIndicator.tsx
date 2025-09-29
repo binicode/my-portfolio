@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
 
-/**
- * StatusIndicator
- * - Adds top padding for spacing
- * - Ensures accessibility with semantic <span>
- */
 export function StatusIndicator() {
   return (
     <motion.div

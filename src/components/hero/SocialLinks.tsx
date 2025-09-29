@@ -16,7 +16,7 @@ export function SocialLinks() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1.5 }}
-      className="flex items-center gap-6 pt-8"
+      className="flex items-center gap-6 pt-4 mb-20 lg:mb-0"
     >
       <span className="text-gray-400 text-sm">Connect with me</span>
       <div className="flex gap-4">
