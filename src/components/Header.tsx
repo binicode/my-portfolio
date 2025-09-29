@@ -145,7 +145,7 @@ export function Header() {
                       onClick={() => scrollToSection(item.href)}
                       className={`relative px-4 py-3 text-left text-gray-300 hover:text-yellow-400 active:text-yellow-300 transition-all duration-300 ease-out group touch-manipulation focus:outline-none focus:ring-2 focus:ring-yellow-400/30 rounded-lg ${
                         isMenuOpen ? "animate-fade-in-up" : ""
-                      }`}
+                      } bg-black/70`}
                       style={{
                         animationDelay: `${index * 100}ms`,
                       }}
@@ -163,43 +163,7 @@ export function Header() {
         )}
         {/* Subtle Bottom Glow */}
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent" />
-      </header>
-      {/* Simple Animations */}
-      <style jsx global>{`
-        @keyframes fade-in-up {
-          0% {
-            opacity: 0;
-            transform: translateY(12px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-fade-in-up {
-            animation: none !important;
-          }
-          * {
-            transition-duration: 0.01ms !important;
-          }
-        }
-        @media (hover: none) and (pointer: coarse) {
-          .touch-manipulation {
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: rgba(250, 204, 21, 0.25);
-          }
-          button:active {
-            transform: scale(0.98);
-          }
-        }
-        .focus\\:ring-2:focus {
-          box-shadow: 0 0 0 2px var(--tw-ring-color);
-        }
-      `}</style>
+      </header>    
     </>
   );
 }
