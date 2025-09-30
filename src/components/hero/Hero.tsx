@@ -67,7 +67,7 @@ export function Hero() {
       aria-label="main-heading"
       className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center relative overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-background.webp')",
+        backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

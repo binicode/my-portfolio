@@ -37,7 +37,7 @@ export function Skills() {
       id="skills"
       className="py-20 bg-black relative overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-background.webp')",
+        backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

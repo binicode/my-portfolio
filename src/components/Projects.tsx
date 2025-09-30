@@ -42,7 +42,7 @@ export function Projects() {
       id="projects"
       className="py-20 bg-gray-900 relative overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-background.webp')",
+        backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -51,7 +51,7 @@ export function Projects() {
     >
       {/* Overlay for readability */}
       <div
-        className="absolute inset-0 bg-black/70 pointer-events-none"
+        className="absolute inset-0 bg-black/60 pointer-events-none"
         aria-hidden="true"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
