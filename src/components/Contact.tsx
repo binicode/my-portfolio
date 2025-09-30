@@ -16,7 +16,6 @@ export function Contact() {
     e.preventDefault();
     // Handle form submission
     console.log("Form submitted:", formData);
-    // Reset form
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -31,28 +30,42 @@ export function Contact() {
 
   const contactInfo = [
     {
-      icon: <Mail className="w-6 h-6" />,
+      icon: <Mail className="w-6 h-6" aria-hidden="true" />,
       title: "Email",
-      value: "biniyam@example.com",
-      link: "mailto:biniyam@example.com",
+      value: "info@biniyam.com",
+      link: "mailto:info@biniyam.com",
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: <Phone className="w-6 h-6" aria-hidden="true" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+251 (977) 25-5555",
+      link: "tel:+251977255555",
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
+      icon: <MapPin className="w-6 h-6" aria-hidden="true" />,
       title: "Location",
-      value: "San Francisco, CA",
-      link: "#",
+      value: "Addis Ababa, Ethiopia",
+      link: "https://www.google.com/maps?q=Addis+Ababa,+Ethiopia",
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="py-20 bg-black relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-background.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      aria-labelledby="contact-heading"
+    >
+      <div
+        className="absolute inset-0 bg-black/40 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +73,10 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-white">
+          <h2
+            id="contact-heading"
+            className="text-4xl md:text-5xl mb-6 text-white"
+          >
             Get In <span className="text-yellow-400">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -88,14 +104,33 @@ export function Contact() {
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-400 border border-yellow-500/20">
+                  <a
+                    href={info.link}
+                    className="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-400 border border-yellow-500/20 hover:bg-yellow-500/20 transition-colors"
+                    aria-label={info.title}
+                    target={info.link.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      info.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
                     {info.icon}
-                  </div>
+                  </a>
                   <div>
                     <p className="text-gray-400 text-sm">{info.title}</p>
                     <a
                       href={info.link}
                       className="text-white hover:text-yellow-400 transition-colors"
+                      aria-label={info.title}
+                      target={
+                        info.link.startsWith("http") ? "_blank" : undefined
+                      }
+                      rel={
+                        info.link.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                     >
                       {info.value}
                     </a>
@@ -112,7 +147,11 @@ export function Contact() {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl border border-yellow-500/20"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              aria-label="Contact form"
+            >
               <div>
                 <label htmlFor="name" className="block text-white mb-2">
                   Name
@@ -125,6 +164,7 @@ export function Contact() {
                   placeholder="Your name"
                   required
                   className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                  aria-required="true"
                 />
               </div>
 
@@ -141,6 +181,7 @@ export function Contact() {
                   placeholder="your.email@example.com"
                   required
                   className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                  aria-required="true"
                 />
               </div>
 
@@ -157,6 +198,7 @@ export function Contact() {
                   rows={5}
                   required
                   className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500 resize-none"
+                  aria-required="true"
                 />
               </div>
 

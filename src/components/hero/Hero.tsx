@@ -66,6 +66,12 @@ export function Hero() {
       role="region"
       aria-label="main-heading"
       className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-background.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* Animated background elements */}
       <AnimatedGridBackground mousePosition={mousePosition} />

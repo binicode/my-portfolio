@@ -17,10 +17,7 @@ export function Header() {
   useEffect(() => {
     if (!isMenuOpen) return;
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
@@ -86,7 +83,10 @@ export function Header() {
               </div>
             </div>
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1 lg:space-x-2" role="navigation">
+            <nav
+              className="hidden md:flex items-center space-x-1 lg:space-x-2"
+              role="navigation"
+            >
               {navItems.map((item, index) => (
                 <button
                   key={item.name}
@@ -96,7 +96,9 @@ export function Header() {
                   aria-label={`Navigate to ${item.name} section`}
                   tabIndex={0}
                 >
-                  <span className="relative z-10 tracking-wide">{item.name}</span>
+                  <span className="relative z-10 tracking-wide">
+                    {item.name}
+                  </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/8 to-yellow-400/0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out" />
                 </button>
               ))}
@@ -108,13 +110,18 @@ export function Header() {
                 e.stopPropagation();
                 toggleMenu();
               }}
-              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={
+                isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+              }
               aria-expanded={isMenuOpen}
               tabIndex={0}
             >
               <div className="absolute inset-0 bg-yellow-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-200 ease-out" />
               <div className="relative z-10">
-                <Menu size={20} className="sm:w-6 sm:h-6 transition-transform duration-300 ease-out" />
+                <Menu
+                  size={20}
+                  className="sm:w-6 sm:h-6 transition-transform duration-300 ease-out"
+                />
               </div>
             </button>
           </div>
@@ -132,7 +139,9 @@ export function Header() {
             <div
               ref={menuRef}
               className={`absolute right-0 top-0 h-full w-64 sm:w-72 bg-black/80 backdrop-blur-md border-l border-yellow-500/20 shadow-xl transition-all duration-300 ease-out ${
-                isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+                isMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-full opacity-0"
               }`}
               role="navigation"
               aria-hidden={!isMenuOpen}
@@ -152,7 +161,9 @@ export function Header() {
                       aria-label={`Navigate to ${item.name} section`}
                       tabIndex={0}
                     >
-                      <span className="relative z-10 text-base tracking-wide">{item.name}</span>
+                      <span className="relative z-10 text-base tracking-wide">
+                        {item.name}
+                      </span>
                       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/15 via-yellow-400/5 to-transparent rounded-lg scale-x-0 origin-left group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-300 ease-out" />
                     </button>
                   ))}
@@ -163,7 +174,7 @@ export function Header() {
         )}
         {/* Subtle Bottom Glow */}
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent" />
-      </header>    
+      </header>
     </>
   );
 }

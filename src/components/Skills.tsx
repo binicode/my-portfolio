@@ -26,15 +26,30 @@ export function Skills() {
         { name: "Git & GitHub", level: 95 },
         { name: "Webpack/Vite", level: 85 },
         { name: "NPM/Yarn", level: 92 },
-        { name: "VS Code", level: 95 },        
+        { name: "VS Code", level: 95 },
         { name: "Figma", level: 85 },
       ],
     },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="skills"
+      className="py-20 bg-black relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-background.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      aria-labelledby="skills-heading"
+    >
+      {/* Overlay for readability */}
+      <div
+        className="absolute inset-0 bg-black/40 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +57,10 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-white">
+          <h2
+            id="skills-heading"
+            className="text-4xl md:text-5xl mb-6 text-white"
+          >
             My <span className="text-yellow-400">Skills</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

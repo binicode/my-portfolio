@@ -38,8 +38,23 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="projects"
+      className="py-20 bg-gray-900 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-background.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      aria-labelledby="projects-heading"
+    >
+      {/* Overlay for readability */}
+      <div
+        className="absolute inset-0 bg-black/70 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +62,10 @@ export function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-white">
+          <h2
+            id="projects-heading"
+            className="text-4xl md:text-5xl mb-6 text-white"
+          >
             Featured <span className="text-yellow-400">Projects</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -98,16 +116,32 @@ export function Projects() {
                     variant="outline"
                     size="sm"
                     className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-500 hover:text-black"
+                    asChild
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View source code on GitHub"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black"
+                    asChild
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
                 </div>
               </div>

@@ -4,19 +4,19 @@ import { Code, Palette, Zap } from "lucide-react";
 export function About() {
   const features = [
     {
-      icon: <Code className="w-8 h-8 text-yellow-400" />,
+      icon: <Code className="w-8 h-8 text-yellow-400" aria-hidden="true" />,
       title: "Modern JavaScript",
       description:
         "Expert in ES6+ (Arrow functions, async/await, and modules) for clean, efficient code.",
     },
     {
-      icon: <Palette className="w-8 h-8 text-yellow-400" />,
+      icon: <Palette className="w-8 h-8 text-yellow-400" aria-hidden="true" />,
       title: "Interactive UI",
       description:
         "Creating dynamic, interactive user interfaces with vanilla JavaScript and React that engage users.",
     },
     {
-      icon: <Zap className="w-8 h-8 text-yellow-400" />,
+      icon: <Zap className="w-8 h-8 text-yellow-400" aria-hidden="true" />,
       title: "Performance",
       description:
         "Fast, responsive, and efficient—my frontend work is built for performance. From optimized components to smooth interactions, speed is always part of the design.",
@@ -24,8 +24,22 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="py-20 bg-gray-900 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-background.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      aria-labelledby="about-heading"
+    >
+      <div
+        className="absolute inset-0 bg-black/70 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,14 +47,18 @@ export function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-6 text-white">
+          <h2
+            id="about-heading"
+            className="text-4xl md:text-5xl mb-6 text-white"
+          >
             About <span className="text-yellow-400">Me</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I began my professional journey in civil engineering, 
-            where I developed a strong foundation in structure, 
-            precision, and problem-solving. While I enjoyed the discipline, 
-            I found myself increasingly drawn to the creative and dynamic world of technology.          </p>
+            I began my professional journey in civil engineering, where I
+            developed a strong foundation in structure, precision, and
+            problem-solving. While I enjoyed the discipline, I found myself
+            increasingly drawn to the creative and dynamic world of technology.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -51,17 +69,16 @@ export function About() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-300 mb-6">
-              Today, I’m a frontend developer specializing in 
-              React and Tailwind CSS. I build modular, responsive interfaces 
-              that balance clean architecture with visual clarity. 
-              My work blends logic and design to create seamless user experiences across devices.
+              Today, I’m a frontend developer specializing in React and Tailwind
+              CSS. I build modular, responsive interfaces that balance clean
+              architecture with visual clarity. My work blends logic and design
+              to create seamless user experiences across devices.
             </p>
             <p className="text-lg text-gray-300 mb-6">
-              Whether I’m collaborating on a freelance project, contributing to a team, 
-              or exploring new tools, I bring curiosity, adaptability, and a builder’s mindset 
-              to every challenge. I’m currently open to internships, freelance opportunities, 
-              and junior developer roles.
-
+              Whether I’m collaborating on a freelance project, contributing to
+              a team, or exploring new tools, I bring curiosity, adaptability,
+              and a builder’s mindset to every challenge. I’m currently open to
+              internships, freelance opportunities, and junior developer roles.
             </p>
             <div className="flex flex-wrap gap-3">
               {[
