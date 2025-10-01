@@ -88,9 +88,13 @@ export function Header() {
               role="navigation"
             >
               {navItems.map((item, index) => (
-                <button
+                <a
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
                   className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-300 hover:text-yellow-400 transition-all duration-300 ease-out group focus:outline-none focus:ring-2 focus:ring-yellow-400/30 rounded-lg"
                   style={{ animationDelay: `${index * 50}ms` }}
                   aria-label={`Navigate to ${item.name} section`}
@@ -100,11 +104,11 @@ export function Header() {
                     {item.name}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/8 to-yellow-400/0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out" />
-                </button>
+                </a>
               ))}
             </nav>
             {/* Mobile Menu Button */}
-            <button
+            <a
               className="md:hidden relative p-2 sm:p-3 text-gray-300 hover:text-yellow-400 transition-all duration-300 group touch-manipulation focus:outline-none focus:ring-2 focus:ring-yellow-400/30 rounded-lg flex-shrink-0"
               onClick={(e) => {
                 e.stopPropagation();
@@ -123,7 +127,7 @@ export function Header() {
                   className="sm:w-6 sm:h-6 transition-transform duration-300 ease-out"
                 />
               </div>
-            </button>
+            </a>
           </div>
         </div>
         {/* Mobile Navigation Overlay */}

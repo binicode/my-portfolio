@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -11,13 +12,8 @@ export function Contact() {
     email: "",
     message: "",
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -28,12 +24,43 @@ export function Contact() {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatusMessage("");
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_mejw7hs", // service ID
+        "template_w3352tk", // template ID
+        templateParams,
+        "xo289X4-Z7a5TSjTz" // public key
+      )
+      .then(() => {
+        setStatusMessage("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("❌ Error sending message:", error);
+        setStatusMessage("❌ Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" aria-hidden="true" />,
       title: "Email",
-      value: "info@biniyam.com",
-      link: "mailto:info@biniyam.com",
+      value: "myrita099@gmail.com",
+      link: "mailto:myrita099@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" aria-hidden="true" />,
@@ -52,7 +79,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-black relative overflow-hidden"
+      className="pt-20 pb-32 bg-black relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -204,10 +231,51 @@ export function Contact() {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black py-3"
+                disabled={isSending}
+                className={`w-full py-3 px-6 rounded-lg text-sm md:text-base bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg hover:shadow-yellow-500/10 transition-shadow focus:ring-2 focus:ring-yellow-500 focus:outline-none ${
+                  isSending ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Send Message
+                {isSending ? (
+                  <span className="flex items-center gap-2">
+                    <svg
+                      className="animate-spin h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
+
+              {statusMessage && (
+                <p
+                  className={`text-sm mt-2 ${
+                    statusMessage.includes("successfully")
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  {statusMessage}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>

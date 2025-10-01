@@ -12,7 +12,7 @@ export function Projects() {
       image:
         "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc1ODQwMjk2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       tech: ["JavaScript", "React", "ES6+", "CSS3"],
-      github: "#",
+      github: "https://github.com/binicode/JavaScript-E-Commerce-App.git",
       live: "#",
     },
     {
@@ -22,7 +22,7 @@ export function Projects() {
       image:
         "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3R8ZW58MXx8fHwxNzU4NDI2NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       tech: ["JavaScript", "Node.js", "Chart.js", "Vanilla JS"],
-      github: "#",
+      github: "https://github.com/binicode/Interactive-Dashboard.git",
       live: "#",
     },
     {
@@ -32,7 +32,7 @@ export function Projects() {
       image:
         "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4NDAzNjY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       tech: ["Vanilla JavaScript", "ES6+", "CSS3", "HTML5"],
-      github: "#",
+      github: "https://github.com/binicode/Vanila-JS-Web-App.git",
       live: "#",
     },
   ];
@@ -115,7 +115,7 @@ export function Projects() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-500 hover:text-black"
+                    className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black"
                     asChild
                   >
                     <a
@@ -130,7 +130,7 @@ export function Projects() {
                   </Button>
                   <Button
                     size="sm"
-                    className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black"
+                    className="bg-gradient-to-r bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg hover:shadow-yellow-500/10 transition-shadow focus:ring-2 focus:ring-yellow-500 focus:outline-none"
                     asChild
                   >
                     <a
