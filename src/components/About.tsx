@@ -26,7 +26,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gray-900 relative overflow-hidden"
+      className="py-20 bg-gray-900 min-h-screen flex flex-wrap items-baseline content-around justify-center relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",

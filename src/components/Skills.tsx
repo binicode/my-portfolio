@@ -35,7 +35,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 bg-black relative overflow-hidden"
+      className="pt-20 pb-20 bg-black min-h-0 md:min-h-screen flex flex-wrap content-around relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",

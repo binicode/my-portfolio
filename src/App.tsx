@@ -1,4 +1,4 @@
-import type {JSX} from "react";
+import type { JSX } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/hero/Hero";
 import { About } from "./components/About";
@@ -11,7 +11,7 @@ export default function App(): JSX.Element {
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
       <Header />
-      <main >
+      <main>
         <Hero />
         <About />
         <Skills />

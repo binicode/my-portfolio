@@ -79,7 +79,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="pt-20 pb-32 bg-black relative overflow-hidden"
+      className="pt-20 pb-20 bg-black min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -107,8 +107,9 @@ export function Contact() {
             Get In <span className="text-yellow-400">Touch</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have a project in mind or want to discuss opportunities? I'd love to
-            hear from you. Let's create something amazing together.
+            If you need someone with a keen eye for detail and a passion for
+            keeping websites modern, responsive, and functional—I’m here to
+            help.
           </p>
         </motion.div>
 
