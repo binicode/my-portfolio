@@ -97,7 +97,7 @@ export function ProfileImage() {
       ))}
       <div className="relative">
         <motion.div
-          className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative"
+          className="w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >

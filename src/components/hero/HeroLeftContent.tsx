@@ -17,7 +17,9 @@ export function HeroLeftContent({ scrollToSection }: HeroLeftContentProps) {
       <Greeting />
       <MainHeading />
       <TitleWithIcons />
-      <Description />
+      <div className="hidden md:block">
+        <Description />
+      </div>
       <HeroButtons scrollToSection={scrollToSection} />
       <SocialLinks />
     </section>
