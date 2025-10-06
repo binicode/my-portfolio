@@ -35,7 +35,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="pt-20 pb-20 bg-black min-h-0 md:min-h-screen flex flex-wrap content-around relative overflow-hidden"
+      className="pt-20 pb-20 bg-black min-h-screen content-center flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -59,7 +59,7 @@ export function Skills() {
         >
           <h2
             id="skills-heading"
-            className="text-4xl md:text-5xl mb-6 text-white"
+            className="text-4xl md:text-5xl mb-6 lg:mt-6 text-white"
           >
             My <span className="text-yellow-400">Skills</span>
           </h2>
@@ -69,7 +69,7 @@ export function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}

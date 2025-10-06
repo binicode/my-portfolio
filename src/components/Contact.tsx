@@ -79,7 +79,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="pt-20 pb-20 bg-black min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="pt-20 pb-40 bg-black min-h-screen flex flex-wrap items-baseline content-around justify-center relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -102,7 +102,7 @@ export function Contact() {
         >
           <h2
             id="contact-heading"
-            className="text-4xl md:text-5xl mb-6 text-white"
+            className="text-4xl md:text-5xl mb-6 lg:mt-6 text-white"
           >
             Get In <span className="text-yellow-400">Touch</span>
           </h2>

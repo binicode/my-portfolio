@@ -21,7 +21,7 @@ export function Projects() {
         "A dynamic admin dashboard built with modern JavaScript featuring real-time data updates, custom event handling, and responsive charts using JavaScript libraries.",
       image:
         "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3R8ZW58MXx8fHwxNzU4NDI2NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      tech: ["JavaScript", "Node.js", "Chart.js", "Vanilla JS"],
+      tech: ["JavaScript", "Node.js", "Chart.js"],
       github: "https://github.com/binicode/Interactive-Dashboard.git",
       live: "#",
     },
@@ -31,7 +31,7 @@ export function Projects() {
         "A single-page application built entirely with vanilla JavaScript showcasing DOM manipulation, event delegation, local storage, and smooth animations without frameworks.",
       image:
         "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4NDAzNjY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      tech: ["Vanilla JavaScript", "ES6+", "CSS3", "HTML5"],
+      tech: ["Vanilla JS", "ES6+", "CSS3", "HTML5"],
       github: "https://github.com/binicode/Vanila-JS-Web-App.git",
       live: "#",
     },
@@ -40,7 +40,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 bg-gray-900 min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="py-20 scroll-mb-40 bg-gray-900 min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -64,7 +64,7 @@ export function Projects() {
         >
           <h2
             id="projects-heading"
-            className="text-4xl md:text-5xl mb-6 text-white"
+            className="text-4xl md:text-5xl mb-6 lg:mt-6 text-white"
           >
             Featured <span className="text-yellow-400">Projects</span>
           </h2>
@@ -75,7 +75,7 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:h-[60vh] gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
