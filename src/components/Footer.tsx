@@ -19,11 +19,6 @@ export function Footer() {
       href: "https://x.com/ritaye099",
       label: "Twitter",
     },
-    {
-      icon: <Mail size={20} aria-hidden="true" />,
-      href: "mailto:myrita099@email.com",
-      label: "Email",
-    },
   ];
 
   return (

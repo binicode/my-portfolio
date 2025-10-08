@@ -9,9 +9,9 @@ import { Footer } from "./components/Footer";
 
 export default function App(): JSX.Element {
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <About />
         <Skills />
