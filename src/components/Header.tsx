@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { useState, useEffect, useCallback, useRef } from "react";
+import { Button } from "./ui/button";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -108,7 +109,8 @@ export function Header() {
               ))}
             </nav>
             {/* Mobile Menu Button */}
-            <a
+            <button
+              type="button"
               className="md:hidden relative p-2 sm:p-3 text-gray-300 hover:text-yellow-400 transition-all duration-300 group touch-manipulation focus:outline-none focus:ring-2 focus:ring-yellow-400/30 rounded-lg flex-shrink-0"
               onClick={(e) => {
                 e.stopPropagation();
@@ -127,7 +129,7 @@ export function Header() {
                   className="sm:w-6 sm:h-6 transition-transform duration-300 ease-out"
                 />
               </div>
-            </a>
+            </button>
           </div>
         </div>
         {/* Mobile Navigation Overlay */}

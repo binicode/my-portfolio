@@ -35,10 +35,10 @@ export function HeroButtons({
           aria-label="Contact me"
           onClick={() => scrollToSection("#contact")}
           variant="outline"
-          className="border-2 border-yellow-400/40 text-amber-400 hover:bg-yellow-400/10 hover:border-yellow-300 px-8 py-6 text-lg rounded-xl backdrop-blur-sm relative overflow-hidden group"
+          className="border-2 border-yellow-500 text-[#fbbf24] bg-[#111827] hover:bg-yellow-500/10 hover:border-yellow-400 px-8 py-6 text-lg rounded-xl backdrop-blur-sm relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-yellow-400/40 shadow-md hover:shadow-yellow-400/30 transition-shadow duration-300"
         >
           <span className="relative z-10 flex items-center gap-2">
-            <Mail className="w-5 h-5" aria-hidden="true" />
+            <Mail className="w-5 h-5 text-[#fbbf24]" aria-hidden="true" />
             <span>Hire Me</span>
           </span>
         </Button>
