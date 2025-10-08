@@ -60,7 +60,7 @@ export function Contact() {
       icon: <Mail className="w-6 h-6" aria-hidden="true" />,
       title: "Email",
       value: "myrita099@gmail.com",
-      link: "mailto:myrita099@gmail.com",
+      link: "#name",
     },
     {
       icon: <Phone className="w-6 h-6" aria-hidden="true" />,
@@ -191,7 +191,7 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="Your name"
                   required
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
+                  className="scroll-mt-40 bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-yellow-500"
                   aria-required="true"
                 />
               </div>
@@ -273,6 +273,8 @@ export function Contact() {
                       ? "text-green-400"
                       : "text-red-400"
                   }`}
+                  role="status"
+                  aria-live="polite"
                 >
                   {statusMessage}
                 </p>

@@ -49,7 +49,7 @@ export function Skills() {
         className="absolute inset-0 bg-black/40 pointer-events-none"
         aria-hidden="true"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

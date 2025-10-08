@@ -9,7 +9,6 @@ export function SocialLinks() {
       href: "https://www.linkedin.com/in/biniyam-abera-engineer",
       label: "LinkedIn",
     },
-    { Icon: Mail, href: "mailto:myrita099@email.com", label: "Email" },
   ];
   return (
     <motion.div
