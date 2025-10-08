@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
 
-/**
- * MainHeading
- * - Uses semantic <h1> for SEO and accessibility
- * - Adds id for aria-labelledby reference
- */
 export function MainHeading() {
   return (
     <motion.div
