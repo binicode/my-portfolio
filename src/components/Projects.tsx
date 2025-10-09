@@ -9,8 +9,7 @@ export function Projects() {
       title: "JavaScript E-Commerce App",
       description:
         "A modern e-commerce application built with pure JavaScript and React. Features async/await API calls, ES6 modules, dynamic filtering, and interactive shopping cart functionality.",
-      image:
-        "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc1ODQwMjk2NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/cards/ecommerce.webp",
       tech: ["JavaScript", "React", "ES6+", "CSS3"],
       github: "https://github.com/binicode/JavaScript-E-Commerce-App.git",
       live: "#",
@@ -19,8 +18,7 @@ export function Projects() {
       title: "Interactive Dashboard",
       description:
         "A dynamic admin dashboard built with modern JavaScript featuring real-time data updates, custom event handling, and responsive charts using JavaScript libraries.",
-      image:
-        "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3R8ZW58MXx8fHwxNzU4NDI2NzQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/cards/dashboard.webp",
       tech: ["JavaScript", "Node.js", "Chart.js"],
       github: "https://github.com/binicode/Interactive-Dashboard.git",
       live: "#",
@@ -29,8 +27,7 @@ export function Projects() {
       title: "Vanilla JS Web App",
       description:
         "A single-page application built entirely with vanilla JavaScript showcasing DOM manipulation, event delegation, local storage, and smooth animations without frameworks.",
-      image:
-        "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2UlMjBkZXNpZ258ZW58MXx8fHwxNzU4NDAzNjY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/cards/vanillajs.webp",
       tech: ["Vanilla JS", "ES6+", "CSS3", "HTML5"],
       github: "https://github.com/binicode/Vanila-JS-Web-App.git",
       live: "#",
