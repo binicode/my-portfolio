@@ -172,6 +172,7 @@
 
   html,
   :host {
+    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     line-height: 1.5;

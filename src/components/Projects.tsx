@@ -37,7 +37,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 scroll-mb-40 bg-gray-900 min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="py-20 scroll-mb-40 bg-gray-900 min-h-screen flex items-center justify-center relative overflow-clip"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -51,7 +51,7 @@ export function Projects() {
         className="absolute inset-0 bg-black/60 pointer-events-none"
         aria-hidden="true"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 xlg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}

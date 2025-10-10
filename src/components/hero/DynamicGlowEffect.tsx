@@ -7,10 +7,10 @@ interface DynamicGlowEffectProps {
 export function DynamicGlowEffect({ mousePosition }: DynamicGlowEffectProps) {
   const glowStyle = useMemo(
     () => ({
-      left: `${mousePosition.x}%`,
-      top: `${mousePosition.y}%`,
-      transform: "translate(-50%, -50%)",
-      transition: "all 0.4s ease-out",
+      transform: `translate(${mousePosition.x - 50}%, ${
+        mousePosition.y - 50
+      }%)`,
+      transition: "transform 0.4s ease-out",
     }),
     [mousePosition.x, mousePosition.y]
   );

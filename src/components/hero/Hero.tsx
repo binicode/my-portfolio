@@ -1,11 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
 import { AnimatedGridBackground } from "./AnimatedGridBackground";
 import { FloatingParticles } from "./FloatingParticles";
-import { FloatingCodeSnippets } from "./FloatingCodeSnippets";
 import { DynamicGlowEffect } from "./DynamicGlowEffect";
 import { HeroLeftContent } from "./HeroLeftContent";
 import { HeroRightContent } from "./HeroRightContent";
-import { ScrollIndicator } from "./ScrollIndicator";
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -49,23 +47,12 @@ export function Hero() {
     }
   };
 
-  const codeSnippets = useMemo(
-    () => [
-      "const developer = 'Biniyam';",
-      "export function createUI() {",
-      "return <App />;",
-      "async function fetchData() {",
-      "useState(initialValue);",
-    ],
-    []
-  );
-
   return (
     <section
       id="home"
       role="region"
       aria-label="main-heading"
-      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center relative"
+      className="scroll-mt-24 min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center relative"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
@@ -74,11 +61,10 @@ export function Hero() {
       }}
     >
       {/* Animated background elements */}
-      <AnimatedGridBackground mousePosition={mousePosition} />
+      <AnimatedGridBackground />
 
       {!prefersReducedMotion && (
         <>
-          <FloatingCodeSnippets codeSnippets={codeSnippets} />
           <FloatingParticles particles={particles} />
           <DynamicGlowEffect mousePosition={mousePosition} />
         </>
@@ -89,9 +75,6 @@ export function Hero() {
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-20 pb-24">
           <HeroLeftContent scrollToSection={scrollToSection} />
           <HeroRightContent />
-        </div>
-        <div className="hidden md:block">
-          <ScrollIndicator scrollToSection={scrollToSection} />
         </div>
       </div>
     </section>

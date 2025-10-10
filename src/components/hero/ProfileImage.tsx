@@ -1,42 +1,7 @@
 import { motion } from "framer-motion";
-import { Braces, Sparkles } from "lucide-react";
 import profileImage from "../../assets/profile-picture.webp";
 
 export function ProfileImage() {
-  const floatingElements = [
-    {
-      element: (
-        <Braces className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-      ),
-      position: { top: "10%", right: "10%" },
-      delay: 0,
-    },
-    {
-      element: (
-        <span className="text-yellow-400 font-mono text-lg" aria-hidden="true">
-          &lt;/&gt;
-        </span>
-      ),
-      position: { top: "30%", left: "5%" },
-      delay: 0.5,
-    },
-    {
-      element: (
-        <Sparkles className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-      ),
-      position: { bottom: "20%", right: "5%" },
-      delay: 1,
-    },
-    {
-      element: (
-        <span className="text-yellow-400 font-mono text-sm" aria-hidden="true">
-          {/* Decorative */}
-        </span>
-      ),
-      position: { bottom: "30%", left: "10%" },
-      delay: 1.5,
-    },
-  ];
   return (
     <motion.div
       initial={{ opacity: 0, x: 100, scale: 0.8 }}
@@ -61,10 +26,8 @@ export function ProfileImage() {
         }}
         aria-hidden="true"
       />
-      <motion.div
+      <div
         className="absolute inset-0 border border-yellow-400/10 rounded-full"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         style={{
           width: "140%",
           height: "140%",
@@ -73,27 +36,7 @@ export function ProfileImage() {
         }}
         aria-hidden="true"
       />
-      {floatingElements.map(({ element, position, delay }, index) => (
-        <motion.div
-          key={index}
-          className="absolute p-3 bg-yellow-400/10 border border-yellow-400/20 rounded-full backdrop-blur-sm flex items-center justify-center pointer-events-none"
-          style={position}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: [0, -10, 0],
-          }}
-          transition={{
-            opacity: { delay: delay + 1 },
-            scale: { delay: delay + 1 },
-            y: { duration: 3, repeat: Infinity, delay: delay },
-          }}
-          aria-hidden="true"
-        >
-          {element}
-        </motion.div>
-      ))}
+
       <div className="relative">
         <motion.div
           className="w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative"

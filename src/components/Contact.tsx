@@ -79,7 +79,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="pt-20 pb-20 bg-black flex flex-wrap items-baseline content-around justify-center relative"
+      className="min-h-screen pt-20 pb-20 bg-black flex flex-wrap items-baseline content-around justify-center relative"
       style={{
         backgroundImage: "url('/background-image.webp')",
         backgroundSize: "cover",
